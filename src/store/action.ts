@@ -37,6 +37,20 @@ export const fetchFavoritesOffers = createAsyncThunk<
     }
   );
 
+export const changeOfferStatus = createAsyncThunk<
+    void,
+    {
+      offerStatus: number;
+      offerId: string;
+    },
+    { extra: AxiosInstance }
+  >(
+    Actions.CHANGE_OFFER_STATUS,
+    async ({ offerStatus, offerId }, { extra: api }) => {
+      await api.post(`${Paths.FetchFavoritesOffers}/${offerId}/${offerStatus}`);
+    }
+  );
+
 export const fetchOffer = createAsyncThunk<
     OfferInfo,
     string,
@@ -123,3 +137,4 @@ export const postComment = createAsyncThunk<
       await api.post(Paths.FetchComments.replace('{offerId}', offerId), formValue);
     }
   );
+  
