@@ -137,4 +137,3 @@ export const postComment = createAsyncThunk<
       await api.post(Paths.FetchComments.replace('{offerId}', offerId), formValue);
     }
   );
-  
