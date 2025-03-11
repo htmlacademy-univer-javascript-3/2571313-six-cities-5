@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { AppRoutes } from '../../constants/routers';
 
-interface LoginProps {
-
-}
+interface LoginProps {}
 
 const LoginPage: React.FC<LoginProps> = () => (
   <div className="page page--gray page--login">
@@ -10,14 +10,13 @@ const LoginPage: React.FC<LoginProps> = () => (
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            <a className="header__logo-link" href="main.html">
+            <Link className="header__logo-link header__logo-link--active" to={AppRoutes.Default}>
               <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </header>
-
     <main className="page__main page__main--login">
       <div className="page__login-container container">
         <section className="login">
